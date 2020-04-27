@@ -1,0 +1,7 @@
+<view class="container">
+    <text class="title">选择难度</text>
+    <button class="difficulty" data-type="1" bindtap="bindViewTap"> 初级 </button>
+    <button class="difficulty" data-type="2" bindtap="bindViewTap"> 中级 </button>
+    <button class="difficulty" data-type="3" bindtap="bindViewTap"> 高级 </button>
+    <button class="difficulty" data-type="4" bindtap="bindViewTap"> 地狱 </button>
+</view>

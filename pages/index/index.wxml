@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+  <block>
+    <button bindtap="bindViewTap"> 开始游戏 </button>
+  </block>
+  </view>
+</view>

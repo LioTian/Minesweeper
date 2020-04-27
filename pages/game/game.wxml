@@ -1,0 +1,26 @@
+<wxs module="formateTime">
+var getTime = function(time) {
+    var hours = parseInt((time % 86400) / 3600, 10);
+    hours = hours > 9 ? hours : ( "0" + hours);
+    var minutes = parseInt((time % 3600) / 60, 10);
+    minutes = minutes > 9 ? minutes : ( "0" + minutes);
+    var seconds = parseInt(time % 60, 10);
+    seconds = seconds > 9 ? seconds : ( "0" + seconds);
+    return hours + ":" + minutes + ":" + seconds;
+}
+module.exports.getTime = getTime;
+</wxs>
+<view class="container">
+    <view class="header">
+        <view class="time">{{formateTime.getTime(time)}}</view>
+        <view class="button-box">
+            <button class="button">翻开</button>
+            <button class="button">插旗</button>
+        </view>
+    </view>
+    <view class="item-container">
+        <view class="item-box" style="width: {{countWidth}}; height: {{countWidth}};">
+            <view bindtap="play" data-idx="{{index}}" data-is-mine="{{item.isMine}}" class="item {{item.isMine && item.isSelected?'mine':''}} {{!item.isMine && item.isSelected?'selected':''}}" style="top: {{item.y+'px'}}; left: {{item.x+'px'}};" wx:for="{{mineData}}" wx:key="index">{{item.num > 0 ? item.num : ''}}</view>
+        </view>
+    </view>
+</view>
